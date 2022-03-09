@@ -45,7 +45,9 @@ class ParentChildTestApplicationTests {
         child.setName(UUID.randomUUID()
                 .toString());
 
-        parent.addChild(child);
+        //parent.addChild(child);
+        parent.getChildren()
+                .add(child);
 
         childRepo.save(child);
         parentRepo.save(parent);

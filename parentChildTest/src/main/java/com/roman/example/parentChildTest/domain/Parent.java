@@ -6,10 +6,8 @@
 
 package com.roman.example.parentChildTest.domain;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -28,8 +26,8 @@ public class Parent {
     @Column(name = "PARENT_ID")
     private Long id;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent", cascade = CascadeType.PERSIST)
-    private Set<Child> children = new HashSet<>();
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
+    private List<Child> children;
 
     @Column(name = "NAME", nullable = false, length = 100)
     private String name;
@@ -56,14 +54,14 @@ public class Parent {
     /**
      * @return the children
      */
-    public Set<Child> getChildren() {
+    public List<Child> getChildren() {
         return children;
     }
 
     /**
      * @param children the children to set
      */
-    public void setChildren(final Set<Child> children) {
+    public void setChildren(final List<Child> children) {
         this.children = children;
     }
 
