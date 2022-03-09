@@ -6,4 +6,6 @@ Requirements:
 * maven
 
 To run the tests:
-    ./mvnw test
+```
+    bash ./mvnw test 
+``` 
